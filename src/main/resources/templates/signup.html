@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="ISO-8859-1"></meta>
+	<!-- Required meta tags -->
+    <meta charset="utf-8"></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"></meta>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" ></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<title>sign up</title>
+</head>
+<body>
+	<div class="container">
+	<br/><br/><br/>
+		<div class="h4">Signup</div>
+		<form th:action="@{/signup}"  th:object="${user}" method="post">
+		  <div class="form-group">
+		    <label>First name</label>
+		    <input type="text" th:field="*{fName}" name="fname" class="form-control"/>
+		  </div>
+		  <div class="form-group">
+		    <label>Last Name</label>
+		    <input type="text" th:field="*{lName}" name="lname" class="form-control"/>
+		  </div>		  		
+		  <div class="form-group">
+		    <label>Email address</label>
+		    <input type="email" th:field="*{email}" name="email" class="form-control"/>
+		  </div>
+		  <div class="form-group">
+		    <label>Password</label>
+		    <input type="password" th:field="*{password}" name="password" class="form-control"/>
+		  </div>
+		  <button type="submit" class="btn btn-primary">Submit</button>
+		</form>	
+	</div>
+</body>
+</html>
